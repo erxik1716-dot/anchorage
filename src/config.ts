@@ -20,8 +20,9 @@ export const LINKS = {
   bilibiliLive: 'https://live.bilibili.com/1713546334',
 } as const
 
-/** 站长联系方式（暂未提供，留空则不展示） */
+/** 站长联系方式（留空则不展示） */
 export const CONTACT = {
+  email: 'sonder0891@163.com',
   wechat: '',
   qq: '',
 } as const

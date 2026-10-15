@@ -14,7 +14,7 @@ export default function Gallery() {
   }, [close])
 
   return (
-    <main className="mx-auto max-w-6xl px-6 pb-20 pt-24">
+    <main className="mx-auto max-w-6xl px-4 pb-20 pt-24 sm:px-6">
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-widest text-zinc-100">画廊</h1>
         <p className="mt-2 text-sm text-zinc-500">灰泽满 Hazel 相关图集 · 点击查看大图</p>

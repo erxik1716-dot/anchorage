@@ -15,20 +15,29 @@ const NAV = [
   { to: '/about', label: '关于', icon: UserRound },
 ]
 
-/** 顶部图标导航（参考 laplace.live 的纯图标导航栏） */
+const pill =
+  'flex h-11 items-center rounded-full border border-white/15 bg-zinc-900/70 shadow-lg shadow-black/40 backdrop-blur-xl backdrop-saturate-150'
+
+/**
+ * 顶部悬浮导航 —— 苹果式侧置布局：
+ * 左侧站标胶囊与右侧导航胶囊同高、同边框、同磨砂，视觉对齐
+ */
 export default function SiteNav() {
   return (
     <TooltipProvider delayDuration={150}>
-      <header className="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-4">
-        <NavLink
-          to="/"
-          aria-label={SITE.name}
-          className="text-zinc-400 transition-colors hover:text-zinc-100"
-        >
-          <Anchor className="size-5" />
-        </NavLink>
+      <header className="fixed inset-x-0 top-4 z-40 flex items-start justify-between px-4 sm:px-5">
+        {/* 站标胶囊 */}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <NavLink to="/" aria-label={SITE.name} className={`${pill} px-3.5 text-zinc-400 transition-colors hover:text-zinc-100`}>
+              <Anchor className="size-4" />
+            </NavLink>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">{SITE.name}</TooltipContent>
+        </Tooltip>
 
-        <nav className="flex items-center gap-1 rounded-full border border-white/10 bg-black/40 px-2 py-1.5 backdrop-blur-md">
+        {/* 导航胶囊 */}
+        <nav aria-label="主导航" className={`${pill} gap-1 px-1.5`}>
           {NAV.map(({ to, label, icon: Icon }) => (
             <Tooltip key={to}>
               <TooltipTrigger asChild>
@@ -37,7 +46,7 @@ export default function SiteNav() {
                   end={to === '/'}
                   aria-label={label}
                   className={({ isActive }) =>
-                    `grid size-9 place-items-center rounded-full transition-colors ${
+                    `grid size-8 place-items-center rounded-full transition-colors ${
                       isActive
                         ? 'bg-white/15 text-zinc-50'
                         : 'text-zinc-500 hover:bg-white/5 hover:text-zinc-200'

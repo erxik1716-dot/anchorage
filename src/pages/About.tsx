@@ -14,13 +14,13 @@ const PROFILE = [
 /** 关于：关于 Hazel + 关于本站 */
 export default function About() {
   return (
-    <main className="mx-auto max-w-3xl px-6 pb-20 pt-24">
+    <main className="mx-auto max-w-3xl px-4 pb-20 pt-24 sm:px-6">
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-widest text-zinc-100">关于</h1>
       </header>
 
       {/* 关于 Hazel */}
-      <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-8">
+      <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
         <div className="flex flex-col items-start gap-6 sm:flex-row">
           <img
             src={asset('assets/avatar.webp')}
@@ -63,7 +63,7 @@ export default function About() {
       </section>
 
       {/* 关于本站 */}
-      <section className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-8">
+      <section className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
         <h2 className="text-lg font-bold text-zinc-100">关于 {SITE.name}</h2>
         <p className="mt-3 text-sm leading-7 text-zinc-400">
           {SITE.description}，由粉丝搭建与维护，与 VirtuaReal 及灰泽满本人无关。
