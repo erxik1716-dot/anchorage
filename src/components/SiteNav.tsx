@@ -30,7 +30,7 @@ export default function SiteNav() {
         <Tooltip>
           <TooltipTrigger asChild>
             <NavLink to="/" aria-label={SITE.name} className={`${pill} px-3.5 text-zinc-400 transition-colors hover:text-zinc-100`}>
-              <Anchor className="size-4" />
+              <Anchor className="size-4 translate-y-px" />
             </NavLink>
           </TooltipTrigger>
           <TooltipContent side="bottom">{SITE.name}</TooltipContent>
@@ -53,7 +53,7 @@ export default function SiteNav() {
                     }`
                   }
                 >
-                  <Icon className="size-4" />
+                  <Icon className="size-4 translate-y-px" />
                 </NavLink>
               </TooltipTrigger>
               <TooltipContent side="bottom">{label}</TooltipContent>
